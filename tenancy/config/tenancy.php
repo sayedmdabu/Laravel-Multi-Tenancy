@@ -10,6 +10,7 @@ return [
     'tenant_model' => \App\Models\Tenant::class,
     'id_generator' => Stancl\Tenancy\UUIDGenerator::class,
 
+
     'domain_model' => Domain::class,
 
     /**
@@ -20,6 +21,7 @@ return [
     'central_domains' => [
         '127.0.0.1',
         'localhost',
+        'tenancy.test',
     ],
 
     /**
@@ -52,7 +54,7 @@ return [
          * Tenant database names are created like this:
          * prefix + tenant_id + suffix.
          */
-        'prefix' => 'tenant',
+        'prefix' => 'sh_',
         'suffix' => '',
 
         /**

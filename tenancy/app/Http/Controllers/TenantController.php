@@ -13,6 +13,7 @@ class TenantController extends Controller
      */
     public function index()
     {
+        // dd(env('APP_DOMAIN'));
         $tenants = Tenant::with('domains')->get();
         return view('tenants.index', compact('tenants'));
     }
@@ -42,7 +43,7 @@ class TenantController extends Controller
         // store
         $tenant = Tenant::create($valiData);
         $tenant->domains()->create([
-            'domain' => $valiData['domain_name'].'.'.config('app.domain'),
+            'domain' => $valiData['domain_name'].'.'.env('APP_DOMAIN'),
         ]);
 
         // redirect
