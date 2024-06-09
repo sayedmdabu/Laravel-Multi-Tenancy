@@ -1,8 +1,8 @@
 <x-tenant-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Tenants') }}
-            <x-button-link  class="ml-4 float-right" href="{{route('tenants.create')}}">Create Tenants</x-button-link>
+            {{ __('Users') }}
+            <x-button-link  class="ml-4 float-right" href="{{route('users.create')}}">Create User</x-button-link>
         </h2>
     </x-slot>
 
@@ -18,19 +18,19 @@
                             <th scope="col">SL No</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Domain</th>
+                            <th scope="col">Role</th>
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                            @forelse ($tenants as $tenant)
+                            @forelse ($users as $user)
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>{{$tenant->name}}</td>
-                                    <td>{{$tenant->email}}</td>
+                                    <td>{{$user->name}}</td>
+                                    <td>{{$user->email}}</td>
                                     <td>
-                                        @forelse ($tenant->domains as $domain)
-                                            {{$domain->domain}} {{$loop->last ? '' : ', '}}
+                                        @forelse ($user->roles as $role)
+                                            {{$role->name}} {{$loop->last ? '' : ', '}}
                                         @empty
 
                                         @endforelse

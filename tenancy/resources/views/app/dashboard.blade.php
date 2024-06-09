@@ -1,7 +1,7 @@
 <x-tenant-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Tenanl Dashboard') }}
         </h2>
     </x-slot>
 
@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
-                    <x-button-link href="{{route('tenants.index')}}">Tenants</x-button-link>
+                    <x-button-link href="{{route('users.index')}}">Create New User</x-button-link>
                 </div>
             </div>
         </div>
